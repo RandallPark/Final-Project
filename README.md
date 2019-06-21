@@ -14,8 +14,7 @@ Using sentiment analysis on lyrics from songs on the US Top 40, is there a colle
 
 
 ## Data Sources
-• Webscraping https://top40weekly.com/2017-all-charts/ <br>
-• Genius API
+• Twitter API
 
 
 ## Questions we want to answer: 
@@ -27,7 +26,7 @@ Using sentiment analysis on lyrics from songs on the US Top 40, is there a colle
 
 
 ## Inspiration:
-Top40weekly.com & Genius!
+Twitter
 
 
 ## OTHER SOURCES & RESEARCH
