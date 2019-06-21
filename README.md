@@ -1,20 +1,19 @@
-# Popular Music Sentiment
-
+# Social Media Sentiment
 By Mengjia Sun, Bryan Skedgell, Warren Ross, & Charlotte Acevedo <br>
 USC Viterbi/Trilogy Education Data Bootcamp Final Project July 2019
 
 
 ## Project Goals
-Using Natural Language Processing to visualize USA Top 40 music sentiment.
+Use Natural Language Processing, specifically sentiment analysis and text classification, to visualize the sentiment of the most influential people on social media. By scraping tweets on Twitter we will build our sentiment based on the profiles of groups of influential people classified by success type, such as Top 20 most followed people on Twitter, most followed YouTubers, most followed authors, most followed Instagram influencers
 
 ## Value
 Gain insight on the overall cultural sentiment of popular music lyrics.
 
-##Research and Inspiration
+## Research and Inspiration
 Using sentiment analysis on lyrics from songs on the US Top 40, is there a collective, cultural attitude in popular music?  
 
 
-##Data Sources
+## Data Sources
 • Webscraping https://top40weekly.com/2017-all-charts/ <br>
 • Genius API
 
