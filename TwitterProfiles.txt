@@ -1,20 +1,27 @@
-* BarackObama Barack Obama (@BarackObama)
+1 * BarackObama Barack Obama (@BarackObama)
 
-* realDonaldTrump Donald J. Trump (@realDonaldTrump)
+2 * realDonaldTrump Donald J. Trump (@realDonaldTrump)
 
-* BernieSanders Bernie Sanders (@BernieSanders)
+3 * BernieSanders Bernie Sanders (@BernieSanders)
 
-* SenWarren Elizabeth Warren (@SenWarren)
+4 * SenWarren Elizabeth Warren (@SenWarren)
 
-* AOC Alexandria Ocasio-Cortez (@AOC)
+5 * AOC Alexandria Ocasio-Cortez (@AOC)
 
-* marcorubio Marco Rubio (@marcorubio)
+6 * marcorubio Marco Rubio (@marcorubio)
 
-* mike_pence Mike Pence (@mike_pence)
+7 * mike_pence Mike Pence (@mike_pence)
 
-* JoeBiden Joe Biden (@JoeBiden)
+8 * JoeBiden Joe Biden (@JoeBiden)
 
-* tedcruz Ted Cruz (@tedcruz)
+9 * tedcruz Ted Cruz (@tedcruz)
 
-* Liz CheneyVerified account (@Liz_Cheney)
+10 * Liz CheneyVerified account (@Liz_Cheney)
 
+11 * @HouseGOP
+
+12 * @HouseDemocrats
+
+13 * @SenateDems
+
+14 * @SenateGOP
