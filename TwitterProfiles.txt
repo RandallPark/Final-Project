@@ -1,41 +1,27 @@
-*1 BarackObama Barack Obama (@BarackObama)
+1 * BarackObama Barack Obama (@BarackObama)
 
-*2 realDonaldTrump Donald J. Trump (@realDonaldTrump)
+2 * realDonaldTrump Donald J. Trump (@realDonaldTrump)
 
-*8 BernieSanders Bernie Sanders (@BernieSanders)
+3 * BernieSanders Bernie Sanders (@BernieSanders)
 
-*11 SenWarren Elizabeth Warren (@SenWarren)
+4 * SenWarren Elizabeth Warren (@SenWarren)
 
-*12 AOC Alexandria Ocasio-Cortez (@AOC)
+5 * AOC Alexandria Ocasio-Cortez (@AOC)
 
-*15 marcorubio Marco Rubio (@marcorubio)
+6 * marcorubio Marco Rubio (@marcorubio)
 
-*16 mike_pence Mike Pence (@mike_pence)
+7 * mike_pence Mike Pence (@mike_pence)
 
-*18 JoeBiden Joe Biden (@JoeBiden)
+8 * JoeBiden Joe Biden (@JoeBiden)
 
-*19 tedcruz Ted Cruz (@tedcruz)
+9 * tedcruz Ted Cruz (@tedcruz)
 
-??? 21 Sara Palin (@sarahpalinusa)
+10 * Liz CheneyVerified account (@Liz_Cheney)
 
-### 3 POTUS President Trump (@POTUS)
+11 * @HouseGOP
 
-### 4 HillaryClinton Hillary Clinton (@HillaryClinton)
+12 * @HouseDemocrats
 
-### 5 POTUS44 President Obama (@POTUS44)
+13 * @SenateDems
 
-### 6 FLOTUS Melania Trump (@FLOTUS)
-
-### 7 BillClinton Bill Clinton (@BillClinton)
-
-### 9 SenSanders Bernie Sanders (@SenSanders)
-
-###10 VP Vice President Mike Pence (@VP)
-
-### 13 CoryBooker Cory Booker (@CoryBooker)
-
-### 14 PressSec Sarah Sanders (@PressSec)
-
-###17 SpeakerRyan Paul Ryan (@SpeakerRyan)
-
-### 20 JohnKerry John Kerry (@JohnKerry)
+14 * @SenateGOP
