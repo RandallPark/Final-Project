@@ -72,7 +72,7 @@ Tell us if you want to be placed on a team.
 
 
 ## RUNNING THE APP INSTRUCTIONS
-not there yet heh
+not there yet
 
 ### "attempted-vizes"
 the folder `attempted-vizes` are incomplete visualzations. 
