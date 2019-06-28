@@ -27,6 +27,14 @@ add your user. For details, see the
 
 ## Download a TensorFlow Docker image
 
+### Install Docker
+
+```
+ docker pull tensorflow/tensorflow                  # Download latest image
+ docker run -it -p 8888:8888 tensorflow/tensorflow  # Start a Jupyter notebook server
+```
+ 
+
 The official TensorFlow Docker images are located in the 
 [tensorflow/tensorflow](https://hub.docker.com/r/tensorflow/tensorflow/){:.external}
 Docker Hub repository. Image releases [are tagged](https://hub.docker.com/r/tensorflow/tensorflow/tags/){:.external}
