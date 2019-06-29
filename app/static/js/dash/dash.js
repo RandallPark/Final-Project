@@ -18,10 +18,10 @@ function dashboard(id, fData) {
             .attr("transform", "translate(" + pieDim.w / 2 + "," + pieDim.h / 2 + ")");
 
         // create function to draw the arcs of the pie slices.
-        var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(0);
+        var arc = d3.arc().outerRadius(pieDim.r - 10).innerRadius(0);
 
         // create a function to compute the pie slice angles.
-        var pie = d3.layout.pie().sort(null).value(function(d) { return d.treatment_status; });
+        var pie = d3.pie().sort(null).value(function(d) { return d.treatment_status; });
 
         // Draw the pie slices.
         piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
@@ -117,7 +117,8 @@ function dashboard(id, fData) {
             .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
 
         // create function for x-axis mapping.
-        var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
+        // var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
+        var x = d3.scaleBand().rangeRoundBands([0, hGDim.w], 0.1)
             .domain(fD.map(function(d) { return d[0]; }));
 
         // Add x-axis to the histogram svg.
