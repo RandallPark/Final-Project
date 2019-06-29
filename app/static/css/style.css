@@ -1,31 +1,100 @@
 .iframeContainer {
-  padding: 20px;
-  border: 1px solid #e3e3e3;
+    padding: 20px;
+    border: 1px solid #e3e3e3;
 }
 
+
 /* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Padding bottom by footer height */
-  padding-bottom: 80px;
+    /* Padding bottom by footer height */
+    padding-bottom: 80px;
 }
 
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%; /* Set the fixed height of the footer here */
-  height: 10px;
-  padding-top: 20px;
-  padding-bottom: 40px;
-  text-align: center;
-  background-color: #f5f5f5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 10px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: #f5f5f5;
 }
 
 #footer p {
-  margin: 0;
-  font-size: 16px;
+    margin: 0;
+    font-size: 16px;
+}
+
+path {
+    stroke: #fff;
+}
+
+path:hover {
+    opacity: 0.9;
+}
+
+rect:hover {
+    fill: blue;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+
+/* Centering the vizzes */
+
+svg {
+    display: block;
+    margin: auto;
+}
+
+#dashboard {
+    display: block;
+    margin: auto;
+}
+
+.legend tr {
+    border-bottom: 1px solid grey;
+}
+
+.legend tr:first-child {
+    border-top: 1px solid grey;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.legend {
+    margin-bottom: 76px;
+    display: inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+.legend td {
+    padding: 4px 5px;
+    vertical-align: bottom;
+}
+
+.legendFreq,
+.legendPerc {
+    align: right;
+    width: 50px;
 }
