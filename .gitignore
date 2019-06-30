@@ -1,3 +1,4 @@
+*.ignore.ipynb
 .env
 .config
 .DS_Store
