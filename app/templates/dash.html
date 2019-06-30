@@ -13,9 +13,9 @@
 
     <!-- STEAMGRAPH -->
     <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="{{ url_for('static', filename='js/wordcloud/bower_components/d3.layout.cloud/d3.layout.cloud.js') }}"></script>
+    <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
+    <!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
+    <!-- <script src="{{ url_for('static', filename='js/wordcloud/bower_components/d3.layout.cloud/d3.layout.cloud.js') }}"></script> -->
 
     <!-- Our CSS -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <!-- Navbar -->
+    <!-- NAVBAR NAVBAR -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,14 +34,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand" href="#">US Politician's Twitter Sentiment Analysis</a>
+                <a class="navbar-brand" href="#">US Politician's Tweet Sentiment Analysis</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="{{ url_for('scatter_plot') }}">Scatter Plot</a></li>
+                    <li><a href="{{ url_for('wordcloud') }}">TensorFlow WordCloud</a></li>
+                    <li><a href="{{ url_for('stream') }}">VADER Stream</a></li>
                     <li><a href="{{ url_for('get_form') }}">Try It</a></li>
                 </ul>
             </div>
@@ -49,24 +50,13 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- THE WORDCLOUD -->
-    <div class="my_svg"></div>
-    <!-- wordcloud js -->
-    <script src="{{ url_for('static', filename='js/wordcloud/easywordcloud.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/wordcloud/demo.js') }}"></script>
-
-
-    <!-- THE STEAMGRAPH -->
-    <div id="my_dataviz"></div>
-    <!-- stream js -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/streamgraph/stream.js') }}"></script>
-
-
+    <h1>United States Politician Tweet Sentiments</h1>
+    <h3>A Machine Learning & Sentiment Analysis Tutorial</h3>
 
     <!-- THE DASHBOARD -->
     <div id="dashboard"></div>
     <!-- dashboard js -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/dash/dash.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/dash/demo.js') }}"></script>
 

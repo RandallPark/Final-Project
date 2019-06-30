@@ -13,7 +13,13 @@ html {
 
 body {
     /* Padding bottom by footer height */
+    /* background-image: url("home.jpg"); */
     padding-bottom: 80px;
+}
+
+h1,
+h3 {
+    text-align: center;
 }
 
 #footer {
@@ -57,17 +63,22 @@ svg {
     margin: auto;
 }
 
-#dashboard {
+
+/* #dashboard {
+    display: block;
+    margin: auto;
+} */
+
+.legend tr {
+    border-bottom: 1px solid grey;
     display: block;
     margin: auto;
 }
 
-.legend tr {
-    border-bottom: 1px solid grey;
-}
-
 .legend tr:first-child {
     border-top: 1px solid grey;
+    display: block;
+    margin: auto;
 }
 
 .axis path,
@@ -88,9 +99,11 @@ svg {
     border-spacing: 0px;
 }
 
-.legend td {
+.legend tbody,
+td {
     padding: 4px 5px;
-    vertical-align: bottom;
+    margin: center;
+    vertical-align: center;
 }
 
 .legendFreq,
