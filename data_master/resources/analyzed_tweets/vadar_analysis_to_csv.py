@@ -5,7 +5,7 @@
 # get_ipython().system('pip install tweepy')
 # get_ipython().system('pip install vaderSentiment')
 
-import tweepy
+# import tweepy
 import pandas as pd
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import nltk
@@ -70,9 +70,9 @@ for file in filt_file_names:
     data_df['positive'] = pos_ser.values
     data_df['polarity'] = pol_ser.values
     #This is where you dictate output file location
-    #  data_df.to_csv(f'./analyzed_tweets/polarity_{file}')
+     data_df.to_csv(f'./analyzed_tweets/polarity_{file}')
     #This is for putting file in folder where it is run.
-    data_df.to_csv(f'polarity_{file}')
+   #  data_df.to_csv(f'polarity_{file}')
 
 
 print('Finished with analyzing files! ')
