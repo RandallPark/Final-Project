@@ -54,26 +54,35 @@ app = Flask(__name__)
 # HTML ROUTES
 #################################################
 
+# HOME PAGE
 @app.route("/")
 def index():
-    """ landing page """
+    """ landing // dashboard """
     return render_template("dash.html")
 
-@app.route("/scatter-plot")
-def scatter_plot():
+# VADER SENTIMENT + WORDCLOUD
+@app.route("/wordcloud")
+def wordcloud():
+    """ landing // dashboard & wordcloud """
+    return render_template("wordcloud.html")
+
+# TENSORFLOW SENTIMENT + STREAMGRAPH
+@app.route("/stream")
+def stream():
     """ scatter plot page """
-    return render_template("dash.html")
+    return render_template("stream.html")
 
-# Interactivity
+
+# SENTIMENT SCORING INTERACTION
 @app.route("/try-it", methods=['GET'])
 def get_form():
     """ Show form to user """
-    return render_template("___.html")
+    return render_template("sentitry.html")
 
 @app.route("/try-it", methods=['POST'])
 def post_form():
     """ process the form """
-    return render_template("___.html")
+    return render_template("sentitry.html")
 
 
 # 4. Define main behavior

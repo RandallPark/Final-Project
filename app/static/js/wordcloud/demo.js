@@ -1,3 +1,4 @@
+// WWWWWORD CLOUD
 // Don't forget to load dom. Otherwise, maketextCloud function might fail to work.
 $().ready(function() {
 
