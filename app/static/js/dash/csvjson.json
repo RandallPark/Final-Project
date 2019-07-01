@@ -1,0 +1,110 @@
+[
+  {
+    "Politician": "Bernie Sanders",
+    "Unnamed: 0": 2300.5,
+    "Word Count": 33.88540734109221,
+    "negative": 0.09332050134288276,
+    "neutral": 0.7750671441360805,
+    "positive": 0.13161369740376017,
+    "polarity": 0.13855640107430636
+  },
+  {
+    "Politician": "Donald Trump",
+    "Unnamed: 0": 5651.5,
+    "Word Count": 32.581307627829005,
+    "negative": 0.09343880972338647,
+    "neutral": 0.741927912824812,
+    "positive": 0.16463118189438414,
+    "polarity": 0.16611106454316865
+  },
+  {
+    "Politician": "House of Democrats",
+    "Unnamed: 0": 3013.5,
+    "Word Count": 23.383590462833098,
+    "negative": 0.06553155680224401,
+    "neutral": 0.8231100981767194,
+    "positive": 0.1113534361851329,
+    "polarity": 0.1272176718092567
+  },
+  {
+    "Politician": "House of Republican",
+    "Unnamed: 0": 712.5,
+    "Word Count": 23.383590462833098,
+    "negative": 0.06553155680224401,
+    "neutral": 0.8231100981767194,
+    "positive": 0.1113534361851329,
+    "polarity": 0.1272176718092567
+  },
+  {
+    "Politician": "Joe Biden",
+    "Unnamed: 0": 807.5,
+    "Word Count": 23.589727722772277,
+    "negative": 0.04989170792079208,
+    "neutral": 0.8160792079207922,
+    "positive": 0.13403341584158412,
+    "polarity": 0.22283712871287206
+  },
+  {
+    "Politician": "Liz Cheney",
+    "Unnamed: 0": 1502.5,
+    "Word Count": 19.310126582278482,
+    "negative": 0.07182215189873416,
+    "neutral": 0.7407189873417724,
+    "positive": 0.18746202531645575,
+    "polarity": 0.24978151898734208
+  },
+  {
+    "Politician": "Marco Rubio",
+    "Unnamed: 0": 2980.5,
+    "Word Count": 36.18098782138024,
+    "negative": 0.09308660351826799,
+    "neutral": 0.7983954668470906,
+    "positive": 0.1085142083897156,
+    "polarity": 0.02346904600811907
+  },
+  {
+    "Politician": "Mike Pence",
+    "Unnamed: 0": 4458.5,
+    "Word Count": 36.18098782138024,
+    "negative": 0.09308660351826799,
+    "neutral": 0.7983954668470906,
+    "positive": 0.1085142083897156,
+    "polarity": 0.02346904600811907
+  },
+  {
+    "Politician": "Senate of Democrats",
+    "Unnamed: 0": 1183.5,
+    "Word Count": 30.83244680851064,
+    "negative": 0.07447074468085105,
+    "neutral": 0.8311196808510647,
+    "positive": 0.0944215425531915,
+    "polarity": 0.07567659574468089
+  },
+  {
+    "Politician": "Senate of Republican",
+    "Unnamed: 0": 6594,
+    "Word Count": 23.66684350132626,
+    "negative": 0.0354944297082228,
+    "neutral": 0.8163209549071607,
+    "positive": 0.14818037135278536,
+    "polarity": 0.3226653050397861
+  },
+  {
+    "Politician": "Senator Warren",
+    "Unnamed: 0": 4526.5,
+    "Word Count": 30.38598810310641,
+    "negative": 0.10245968274950398,
+    "neutral": 0.7915776602775936,
+    "positive": 0.10595736946463974,
+    "polarity": 0.0007567415730337269
+  },
+  {
+    "Politician": "Ted Cruz",
+    "Unnamed: 0": 7223.5,
+    "Word Count": 29.373407643312103,
+    "negative": 0.043538522637013514,
+    "neutral": 0.7898181096108031,
+    "positive": 0.16663780778395546,
+    "polarity": 0.274003335980937
+  }
+]

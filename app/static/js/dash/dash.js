@@ -1,16 +1,19 @@
 function dashboard(id, fData) {
-    var barColor = 'black';
+    var barColor = 'orange';
 
-    function segColor(c) { return { treatment_completed: "#ffffff", treatment_incomplete: "#000000" }[c]; }
+    function segColor(c) { return { negative: "#ffffff", positive: "#000000" }[c]; }
 
-    // compute total for each age_started.
-    fData.forEach(function(d) { d.total = d.treatment_status.treatment_completed + d.treatment_status.treatment_incomplete; });
+    // ROUNDING THE POSITIVE & NEGATIVE TWEETS
+    // d3.format(",.1%")
 
-    // function to handle histogram.
+    // compute total for each Politician (age_started).
+    fData.forEach(function(d) { d.total = d.tweets.negative + d.tweets.positive; });
+
+    // HISTOGRAM FUNCTION
     function histoGram(fD) {
         var hG = {},
-            hGDim = { t: 60, r: 0, b: 30, l: 0 };
-        hGDim.w = 550 - hGDim.l - hGDim.r,
+            hGDim = { t: 80, r: 0, b: 30, l: 0 };
+        hGDim.w = 600 - hGDim.l - hGDim.r,
             hGDim.h = 300 - hGDim.t - hGDim.b;
 
         //create svg for histogram.
@@ -53,9 +56,9 @@ function dashboard(id, fData) {
             .attr("text-anchor", "middle");
 
         function mouseover(d) { // utility function to be called on mouseover.
-            // filter for selected age_started.
-            var st = fData.filter(function(s) { return s.age_started == d[0]; })[0],
-                nD = d3.keys(st.treatment_status).map(function(s) { return { type: s, treatment_status: st.treatment_status[s] }; });
+            // filter for selected Politician (age_started).
+            var st = fData.filter(function(s) { return s.Politician == d[0]; })[0],
+                nD = d3.keys(st.tweets).map(function(s) { return { type: s, tweets: st.tweets[s] }; });
 
             // call update functions of pie-chart and legend.    
             pC.update(nD);
@@ -92,7 +95,7 @@ function dashboard(id, fData) {
         return hG;
     }
 
-    // function to handle pieChart.
+    // PIE CHART FUNCTION
     function pieChart(pD) {
         var pC = {},
             pieDim = { w: 250, h: 250 };
@@ -107,7 +110,7 @@ function dashboard(id, fData) {
         var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(0);
 
         // create a function to compute the pie slice angles.
-        var pie = d3.layout.pie().sort(null).value(function(d) { return d.treatment_status; });
+        var pie = d3.layout.pie().sort(null).value(function(d) { return d.tweets; });
 
         // Draw the pie slices.
         piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
@@ -124,14 +127,14 @@ function dashboard(id, fData) {
         function mouseover(d) {
             // call the update function of histogram with new data.
             hG.update(fData.map(function(v) {
-                return [v.age_started, v.treatment_status[d.data.type]];
+                return [v.Politician, v.tweets[d.data.type]];
             }), segColor(d.data.type));
         }
         //Utility function to be called on mouseout a pie slice.
         function mouseout(d) {
             // call the update function of histogram with all data.
             hG.update(fData.map(function(v) {
-                return [v.age_started, v.total];
+                return [v.Politician, v.total];
             }), barColor);
         }
         // Animating the pie-slice requiring a custom function which specifies
@@ -170,7 +173,7 @@ function dashboard(id, fData) {
 
         // create the third column for each segment.
         tr.append("td").attr("class", 'legendFreq')
-            .text(function(d) { return d3.format(",")(d.treatment_status); });
+            .text(function(d) { return d3.format(",")(d.tweets); });
 
         // create the fourth column for each segment.
         tr.append("td").attr("class", 'legendPerc')
@@ -182,26 +185,26 @@ function dashboard(id, fData) {
             var l = legend.select("tbody").selectAll("tr").data(nD);
 
             // update the treatment_status.
-            l.select(".legendFreq").text(function(d) { return d3.format(",")(d.treatment_status); });
+            l.select(".legendFreq").text(function(d) { return d3.format(",")(d.tweets); });
 
             // update the percentage column.
             l.select(".legendPerc").text(function(d) { return getLegend(d, nD); });
         }
 
         function getLegend(d, aD) { // Utility function to compute percentage.
-            return d3.format("%")(d.treatment_status / d3.sum(aD.map(function(v) { return v.treatment_status; })));
+            return d3.format("%")(d.tweets / d3.sum(aD.map(function(v) { return v.tweets; })));
         }
 
         return leg;
     }
 
-    // calculate total treatment_status by segment for all age_started.
-    var tF = ['treatment_completed', 'treatment_incomplete'].map(function(d) {
-        return { type: d, treatment_status: d3.sum(fData.map(function(t) { return t.treatment_status[d]; })) };
+    // calculate total treatment_status by segment for all Politician (age_started).
+    var tF = ['negative', 'positive'].map(function(d) {
+        return { type: d, tweets: d3.sum(fData.map(function(t) { return t.tweets[d]; })) };
     });
 
-    // calculate total treatment_status by age_started for all segment.
-    var sF = fData.map(function(d) { return [d.age_started, d.total]; });
+    // calculate total treatment_status by Politician (age_started) for all segment.
+    var sF = fData.map(function(d) { return [d.Politician, d.total]; });
 
     var pC = pieChart(tF), // create the pie-chart.
         hG = histoGram(sF), // create the histogram.

@@ -1,173 +1,126 @@
 var freqData = [{
-        age_started: "Barak Obama",
-        treatment_status: {
-            "treatment_completed": 23371,
-            "treatment_incomplete": 32410
-        }
+        Politician: "Bernie Sanders",
+        Unnamed: 2300.5,
+        Word_Count: 33.88540734109221,
+        tweets: {
+            negative: 0.09332050134288276,
+            positive: 0.13161369740376017,
+        },
+        neutral: 0.7750671441360805,
+        polarity: 0.13855640107430636
     },
     {
-        age_started: "Donald Trump",
-        treatment_status: {
-            "treatment_completed": 82156,
-            "treatment_incomplete": 114096
-        }
+        Politician: "Donald Trump",
+        Unnamed: 5651.5,
+        Word_Count: 32.581307627829005,
+        tweets: {
+            negative: 0.09343880972338647,
+            positive: 0.16463118189438414,
+        },
+        polarity: 0.16611106454316865
     },
     {
-        age_started: "Bernie Sanders",
-        treatment_status: {
-            "treatment_completed": 115029,
-            "treatment_incomplete": 148584
-        }
+        Politician: "Joe Biden",
+        Unnamed: 807.5,
+        Word_Count: 23.589727722772277,
+        tweets: {
+            negative: 0.04989170792079208,
+            positive: 0.13403341584158412,
+        },
+        polarity: 0.22283712871287206
     },
     {
-        age_started: "AOC",
-        treatment_status: {
-            "treatment_completed": 80090,
-            "treatment_incomplete": 108891
-        }
+        Politician: "Liz Cheney",
+        Unnamed: 1502.5,
+        Word_Count: 19.310126582278482,
+        tweets: {
+            negative: 0.07182215189873416,
+            positive: 0.18746202531645575,
+        },
+        polarity: 0.24978151898734208
     },
     {
-        age_started: "Elizabeth Warren",
-        treatment_status: {
-            "treatment_completed": 50415,
-            "treatment_incomplete": 74736
-        }
+        Politician: "Marco Rubio",
+        Unnamed: 2980.5,
+        Word_Count: 36.18098782138024,
+        tweets: {
+            negative: 0.09308660351826799,
+            positive: 0.1085142083897156,
+        },
+        polarity: 0.02346904600811907
     },
     {
-        age_started: "Liz Cheney",
-        treatment_status: {
-            "treatment_completed": 33048,
-            "treatment_incomplete": 55144
-        }
+        Politician: "Mike Pence",
+        Unnamed: 4458.5,
+        Word_Count: 36.18098782138024,
+        tweets: {
+            negative: 0.09308660351826799,
+            positive: 0.1085142083897156,
+        },
+        polarity: 0.02346904600811907
     },
     {
-        age_started: "Ted Cruz",
-        treatment_status: {
-            "treatment_completed": 38677,
-            "treatment_incomplete": 63039
-        }
+        Politician: "Senator Warren",
+        Unnamed: 4526.5,
+        Word_Count: 30.38598810310641,
+        tweets: {
+            negative: 0.10245968274950398,
+            positive: 0.10595736946463974,
+        },
+        polarity: 0.0007567415730337269
     },
     {
-        age_started: "Mitch McConnell",
-        treatment_status: {
-            "treatment_completed": 9000,
-            "treatment_incomplete": 19889
-        }
+        Politician: "Ted Cruz",
+        Unnamed: 7223.5,
+        Word_Count: 29.373407643312103,
+        tweets: {
+            negative: 0.043538522637013514,
+            positive: 0.16663780778395546,
+        },
+        polarity: 0.274003335980937
     }
 ]
 
 dashboard('#dashboard', freqData);
 
-// var freqData = [{
-//         "positive": 0,
-//         "polarity": -0.5267,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.812,
-//         "Unnamed: 0": 0,
-//         "negative": 0.188,
-//         "Word Count": 23,
-//         "tweet": "One person 🙋🏽‍♂️, one vote 🗳 — regardless of race, income or zip code. Full stop. \n\nHouse Democrats will not stop u… https://t.co/Zn4VZvY9Qa",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0.202,
-//         "polarity": -0.2528,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.556,
-//         "Unnamed: 0": 1,
-//         "negative": 0.242,
-//         "Word Count": 18,
-//         "tweet": "House Democrats Will. Not. Stop. 🗣️\n\nThis week alone, we’re addressing health care, voting rights, disaster relief,… https://t.co/N9zdcmsCZ3",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0.236,
-//         "polarity": -0.2023,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.496,
-//         "Unnamed: 0": 2,
-//         "negative": 0.269,
-//         "Word Count": 16,
-//         "tweet": "House Democrats approved funding for gun violence research #ForThePeople because ALL American DESERVE safe communit… https://t.co/2VVXm7UFKW",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0.123,
-//         "polarity": 0.0258,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.758,
-//         "Unnamed: 0": 3,
-//         "negative": 0.118,
-//         "Word Count": 18,
-//         "tweet": "The American people know that climate change is REAL. \n\nHouse Democrats #CantStopWontStop fighting to protect and p… https://t.co/6r3QOP5oBq",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0.176,
-//         "polarity": 0.4939,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.824,
-//         "Unnamed: 0": 4,
-//         "negative": 0,
-//         "Word Count": 17,
-//         "tweet": "Title X provides millions of Americans with fundamental health care 👨🏽‍⚕️👩🏻‍⚕️ for family planning. \n\nHouse Democra… https://t.co/hdjdzSxoRQ",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0.099,
-//         "polarity": 0.0516,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.812,
-//         "Unnamed: 0": 5,
-//         "negative": 0.089,
-//         "Word Count": 19,
-//         "tweet": "#ShowYourStripes is a creative but alarming example of how climate change is affecting our Earth. \n\nEach stripe ➡️… https://t.co/mUUeddplFR",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0.4,
-//         "polarity": 0.6114,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.6,
-//         "Unnamed: 0": 6,
-//         "negative": 0,
-//         "Word Count": 7,
-//         "tweet": "Happy first day of summer ☀️🏖🌴! https://t.co/IwUkBRrLBd",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0,
-//         "polarity": -0.8126,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.641,
-//         "Unnamed: 0": 7,
-//         "negative": 0.359,
-//         "Word Count": 18,
-//         "tweet": "Senseless gun violence rips through our communities far too often. The American people are demanding action. \n\nWhil… https://t.co/jXORbnVOtu",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0,
-//         "polarity": -0.3612,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.865,
-//         "Unnamed: 0": 8,
-//         "negative": 0.135,
-//         "Word Count": 17,
-//         "tweet": "House Democrats are fighting to #ProtectOurCare #ForThePeople because every American should have FULL and EQUAL acc… https://t.co/yd3gu4r0OC",
-//         "Politician": "House Democrats"
-//     },
-//     {
-//         "positive": 0.2,
-//         "polarity": -0.5267,
-//         "Political Affiliation": "Democrats",
-//         "neutral": 0.517,
-//         "Unnamed: 0": 9,
-//         "negative": 0.283,
-//         "Word Count": 19,
-//         "tweet": "Our diversity is our strength. \n\nViolence against one is violence against all. \n\nWe MUST ensure that EVERY American… https://t.co/pWTn0EQYIE",
-//         "Politician": "House Democrats"
-//     }
-// ]
 
-// dashboard('#dashboard', freqData);
+var houses = [{
+        Politician: "House of Democrats",
+        Unnamed: 3013.5,
+        Word_Count: 23.383590462833098,
+        tweets: {
+            negative: 0.06553155680224401,
+            positive: 0.1113534361851329,
+        },
+        polarity: 0.1272176718092567
+    }, {
+        Politician: "House of Republican",
+        Unnamed: 712.5,
+        Word_Count: 23.383590462833098,
+        tweets: {
+            negative: 0.06553155680224401,
+            positive: 0.1113534361851329,
+        },
+        polarity: 0.1272176718092567
+    },
+    {
+        Politician: "Senate of Democrats",
+        Unnamed: 1183.5,
+        Word_Count: 30.83244680851064,
+        tweets: {
+            negative: 0.07447074468085105,
+            positive: 0.0944215425531915,
+        },
+        polarity: 0.07567659574468089
+    },
+    {
+        Politician: "Senate of Republican",
+        Unnamed: 6594,
+        Word_Count: 23.66684350132626,
+        tweets: {
+            negative: 0.0354944297082228,
+            positive: 0.14818037135278536,
+        },
+        polarity: 0.3226653050397861
+    }
+]
