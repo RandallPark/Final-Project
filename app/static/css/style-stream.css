@@ -53,7 +53,7 @@ p {
 h1 {
     text-align: center;
     font-size: 45px;
-    color: #ffffff;
+    color: #000000;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
     /* font-family: 'Yantramanav', sans-serif; */
@@ -97,9 +97,10 @@ path:hover {
     opacity: 0.9;
 }
 
-rect:hover {
+
+/* rect:hover {
     fill: #e5ff00;
-}
+} */
 
 .axis {
     font: 10px sans-serif;

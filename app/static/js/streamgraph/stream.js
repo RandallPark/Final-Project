@@ -13,8 +13,8 @@ var svg = d3.select("#my_dataviz")
         "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered_wide.csv").then(function(data) {
-
+d3.csv("stream_data.csv").then(function(data) {
+    console.log(data);
 
     //////////
     // GENERAL //

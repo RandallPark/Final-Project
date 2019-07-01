@@ -8,6 +8,8 @@ $().ready(function() {
 
     // you can use own color converting function if you want
     var my_color = d3.schemeRdBu;
+
+    // LINKS TEXTS IN WORDCLOUD (not using) 
     var href_func = function(d) { return "#" + d.text }
 
     // maketextCloud(data, css selector that you wanna insert in, scale of svg, class name of svg, font-family, rotate or not, your color converting function)

@@ -35,8 +35,13 @@ def wordcloud():
 @app.route("/stream")
 def stream():
     """ scatter plot page """
-    return render_template("streamm.html")
+    return render_template("stream.html")
 
+# PANDAS REPORT
+@app.route("/tweet-report")
+def tweetreport():
+    """ pandas twitter analysis page """
+    return render_template("tweet-report.html")
 
 # SENTIMENT SCORING INTERACTION
 @app.route("/try-it", methods=['GET'])

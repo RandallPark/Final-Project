@@ -9,6 +9,7 @@ function makeWordCloud(data, href_func, parent_elem, svgscale, svg_class, font, 
             .attr("width", svgscale)
             .attr("height", svgscale)
             .attr("class", svg_class)
+            .attr("class", "graph-svg-component")
             .append("g")
             .attr("transform", "translate(" + svgscale / 2 + "," + svgscale / 2 + ")")
             .selectAll("a")
@@ -43,7 +44,7 @@ function makeWordCloud(data, href_func, parent_elem, svgscale, svg_class, font, 
         .fontSize(function(d) { return d.size; })
 
     // 単語を回転させるか否か
-    if (!rotate_word) { layout.rotate(function() { return ~~(Math.random() * 2) * 90; }) }
+    if (!rotate_word) { layout.rotate(function() { return ~~(Math.random() * 2.5) * 20; }) }
 
     layout
         .on("end", draw)

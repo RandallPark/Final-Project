@@ -23,21 +23,9 @@ body {
 
 .parallax {
     /* The image used */
-    background-image: url("politics_dark.jpg");
+    background-image: url("capitol.png");
     /* Set a specific height */
-    min-height: 600px;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.parallaxtwo {
-    /* The image used */
-    background-color: url("politics_dark.jpg");
-    /* Set a specific height */
-    min-height: 800px;
+    min-height: 400px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -53,7 +41,7 @@ p {
 h1 {
     text-align: center;
     font-size: 45px;
-    color: #ffffff;
+    color: #000000;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
     /* font-family: 'Yantramanav', sans-serif; */
@@ -78,6 +66,13 @@ h2 {
     padding-bottom: 40px;
     text-align: center;
     background-color: #f5f5f5;
+}
+
+
+/* TO CHANGE THE BACKGROUND COLOR OF THE WORDCLOUD */
+
+.graph-svg-component {
+    background-color: none;
 }
 
 #footer p {
