@@ -34,7 +34,7 @@ function makeWordCloud(data, href_func, parent_elem, svgscale, svg_class, font, 
     var sizeScale = d3.scale.linear().domain([0, data_max]).range([0, 1])
 
     data = data.map(function(d) {
-        return { text: d.text, size: 10 + sizeScale(d.value) * 90 };
+        return { text: d.text, size: 5 + sizeScale(d.value) * 30 };
     })
 
     var layout = d3.layout.cloud().size([svgscale, svgscale])
