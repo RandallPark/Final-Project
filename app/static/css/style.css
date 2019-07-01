@@ -6,6 +6,9 @@
 
 /* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
 
+
+/* LET THE COLORS BEGIN */
+
 html {
     position: relative;
     min-height: 100%;
@@ -15,11 +18,49 @@ body {
     /* Padding bottom by footer height */
     /* background-image: url("home.jpg"); */
     padding-bottom: 80px;
+    /* Used to enable scrolling */
 }
 
-h1,
-h3 {
+
+/* PA PA PA PARALLAX */
+
+.parallax {
+    /* The image used */
+    background-image: url("politics.jpg");
+    /* Set a specific height */
+    min-height: 600px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* IMPORTED GOOGLE FONT */
+
+
+/* 
+.w3-tangerine {
+    font-family: 'Yantramanav', serif;
+} */
+
+p {
+    width: 600px;
+    padding: 5px;
+}
+
+h1 {
     text-align: center;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+h3,
+h2 {
+    text-align: center;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 10px;
+    padding-bottom: 5%;
 }
 
 #footer {
@@ -39,16 +80,20 @@ h3 {
     font-size: 16px;
 }
 
-path {
+
+/* path {
     stroke: #fff;
-}
+} */
+
+
+/* DASHBOARD STYLING */
 
 path:hover {
     opacity: 0.9;
 }
 
 rect:hover {
-    fill: blue;
+    fill: #ffff00;
 }
 
 .axis {
@@ -64,19 +109,16 @@ svg {
 }
 
 
-/* #dashboard {
-    display: block;
-    margin: auto;
-} */
+/* DASH LEGEND */
 
 .legend tr {
-    border-bottom: 1px solid grey;
+    border-bottom: 1.3px solid #000000;
     display: block;
     margin: auto;
 }
 
 .legend tr:first-child {
-    border-top: 1px solid grey;
+    border-top: 1.3px solid #000000;
     display: block;
     margin: auto;
 }
@@ -96,7 +138,7 @@ svg {
     margin-bottom: 76px;
     display: inline-block;
     border-collapse: collapse;
-    border-spacing: 0px;
+    border-spacing: 100px;
 }
 
 .legend tbody,

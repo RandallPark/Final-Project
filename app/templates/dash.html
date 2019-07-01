@@ -10,15 +10,24 @@
     <script src="{{ url_for('static', filename='js/wordcloud/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- <script src="{{ url_for('static', filename='js/wordcloud/bower_components/d3/d3.js') }}"></script> -->
 
-
+    <style>
+        body {
+            height: 3000 px;
+            /* Used to enable scrolling */
+            background: linear-gradient(55deg, #e82c2c 50%, #38A1F3 50%);
+        }
+        /* #b9bfc7 19%, */
+    </style>
     <!-- STEAMGRAPH -->
     <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
     <!-- <script src="https://d3js.org/d3.v3.min.js"></script> -->
     <!-- <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script> -->
     <!-- <script src="{{ url_for('static', filename='js/wordcloud/bower_components/d3.layout.cloud/d3.layout.cloud.js') }}"></script> -->
 
-    <!-- Our CSS -->
+    <!-- THE CSS STYLING -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Yantramanav&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:900&display=swap" rel="stylesheet">
 
 </head>
 
@@ -34,7 +43,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand" href="#">US Politician's Tweet Sentiment Analysis</a>
+                <a class="navbar-brand" href="#">NLP Sentiment Analysis</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,7 +51,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a></li>
                     <li><a href="{{ url_for('wordcloud') }}">TensorFlow WordCloud</a></li>
-                    <li><a href="{{ url_for('stream') }}">VADER Stream</a></li>
+                    <li><a href="{{ url_for('stream') }}">VADER Polarity Stream</a></li>
                     <li><a href="{{ url_for('get_form') }}">Try It</a></li>
                 </ul>
             </div>
@@ -50,15 +59,27 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <h1>United States Politician Tweet Sentiments</h1>
-    <h3>A Machine Learning & Sentiment Analysis Tutorial</h3>
 
-    <!-- THE DASHBOARD -->
-    <div id="dashboard"></div>
-    <!-- dashboard js -->
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/dash/dash.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/dash/demo.js') }}"></script>
+    <!-- TWITTER IMG -->
+    <div class="parallax">
+        <center><img src="https://media.giphy.com/media/jovp4cXiodmeHQpD2X/giphy.gif" alt="Smiley face" height="450" width="450">
+            <img src="https://media.giphy.com/media/1yMO2mvn3kTzu737Ns/giphy.gif" alt="Smiley face" height="200" width="200"></center>
+    </div>
+
+    <p>
+        <h1>Tweet Sentiment Analysis</h1>
+        <h2>of the Most Followed US Politicians on Twitter</h2>
+
+        <!-- THE DASHBOARD -->
+        <div id="dashboard"></div>
+        <!-- dashboard js -->
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/dash/dash.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/dash/demo.js') }}"></script>
+
+        <h1>A Machine Learning & Sentiment Analysis Tutorial</h1>
+    </p>
+    <div class="parallax"></div>
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

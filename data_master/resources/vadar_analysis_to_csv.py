@@ -36,7 +36,7 @@ def filterString(file_name):
    else:
       return True
  
-filtered_files= list(filter(filterString,csv_files))
+filtered_files= list(filter(filterString, csv_files))
 
 sid = SentimentIntensityAnalyzer()
 
@@ -70,9 +70,9 @@ for file in filt_file_names:
     data_df['positive'] = pos_ser.values
     data_df['polarity'] = pol_ser.values
     #This is where you dictate output file location
-    data_df.to_csv(f'./analyzed_tweets/polarity_{file}')
+   #  data_df.to_csv(f'./analyzed_tweets/polarity_{file}')
     #This is for putting file in folder where it is run.
-   #  data_df.to_csv(f'polarity_{file}')
+    data_df.to_csv(f'polarity_{file}')
 
 
 print('Finished with analyzing files! ')

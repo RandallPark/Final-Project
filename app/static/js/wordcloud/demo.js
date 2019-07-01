@@ -21,7 +21,7 @@ $().ready(function() {
     var href_func = function(d) { return "#" + d.text }
 
     // maketextCloud(data, css selector that you wanna insert in, scale of svg, class name of svg, font-family, rotate or not, your color converting function)
-    makeWordCloud(data, href_func, "div.my_svg", 200, "my_svg", "Helvetica", false, my_color)
+    makeWordCloud(data, href_func, "div.my_svg", 600, "my_svg", "Helvetica", false, my_color)
 
     // [ svg class, font-family, rotate texts or not, color function ] are optional.
     // the simplest way => window.makeWordCloud(data, "body", 500)

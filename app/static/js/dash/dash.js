@@ -1,7 +1,7 @@
 function dashboard(id, fData) {
-    var barColor = 'steelblue';
+    var barColor = 'black';
 
-    function segColor(c) { return { treatment_completed: "#38A1F3", treatment_incomplete: "#e04014" }[c]; }
+    function segColor(c) { return { treatment_completed: "#ffffff", treatment_incomplete: "#000000" }[c]; }
 
     // compute total for each age_started.
     fData.forEach(function(d) { d.total = d.treatment_status.treatment_completed + d.treatment_status.treatment_incomplete; });
@@ -149,6 +149,7 @@ function dashboard(id, fData) {
         var leg = {};
 
         // create table for legend.
+        // THIS IS WHERE I CAN CHANGE THE LEGEND PLACEMENT
         var legend = d3.select(id).append("table").attr('class', 'legend');
 
         // create one row per segment.

@@ -3,46 +3,11 @@
 #################################################
 # Imports
 #################################################
-# import os
-# import pandas as pd
-# import numpy as np
+
 from flask import (
     Flask,
     render_template)
-    # jsonify,
-    # request,
-    # redirect)
 
-
-# import sqlalchemy
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-# from sqlalchemy import create_engine, func
-
-#################################################
-# Database Setup
-#################################################
-
-# DB Version 1 - Separate tables
-# Trouble with joining tables
-# sqlite:///resources/database.sqlite
-
-#DB Version 2 - One master table
-# sqlite:///resources/database2.sqlite
-
-# engine = create_engine("sqlite:///resources/database2.sqlite", echo=False)
-# conn = engine.connect()
-
-# Reflect Database into ORM classes
-# Base = automap_base()
-# Base.prepare(engine, reflect=True)
-
-# DB potential reference names
-# lyrics = Base.classes.lyrics
-# artists = Base.classes.artists
-# years = Base.classes.years
-
-# session = Session(bind=engine)
 
 #################################################
 # Flask Setup
@@ -70,7 +35,7 @@ def wordcloud():
 @app.route("/stream")
 def stream():
     """ scatter plot page """
-    return render_template("stream.html")
+    return render_template("streamm.html")
 
 
 # SENTIMENT SCORING INTERACTION
