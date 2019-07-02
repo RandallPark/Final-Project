@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Userinput</title>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+      body {
+          font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+      }
+      .legend {
+          border: 1px solid #555555;
+          border-radius: 5px 5px 5px 5px;
+          font-size: 0.8em;
+          margin: 10px;
+          padding: 8px;
+      }
+      .bld {
+          font-weight: bold;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+        <div class="col-md-10 justify-content-center" >
+            <div class="panel-heading">Tweet Word Cloud</div>
+              <form>
+                <div class="form-group">
+                  <ul class="list-group" id="filters">
+                      <label for="date">Enter a Tweet</label>
+                      <input class="form-control" id="tweetfield" type="text" placeholder="tweets">
+                  </ul>
+                </div>
+                <button id="input-btn" type ="reset" class="btn btn-default" onClick="">New Tweets</button>
+              </form>
+            </div>
+            <div id="my_dataviz"></div>
+        </div>
+  </div>
+  <script>
+    /* input tweet */
+      var inputField = d3.select("#tweetfield");
+      var inputbutton = d3.select("#input-btn");
+      // trigger data change when new tweet is entered.
+      inputField.on("change", function() {
+        var inputtweet = d3.event.target.value;
+        inputbutton.on("click", function() {
+          d3.select("svg").remove();
+          wordcloud(inputtweet)
+        });
+      });
+      function wordcloud(inputtweet){
+        //console.log(inputtweet)
+        var myWords = inputtweet.split(" ");
+        // console.log(words)
+        // set the dimensions and margins of the graph
+        var margin = {top: 10, right: 10, bottom: 10, left: 10},
+            width = 900 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
+        // append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+            .attr("transform",
+                  "translate(" + margin.left + "," + margin.top + ")");
+
+        // Constructs a new cloud layout instance. It run an algorythm to find the position of words that suits your requirements
+        var layout = d3.layout.cloud()
+          .size([width, height])
+          .words(myWords.map(function(d) { return {text: d}; }))
+          .padding(10)
+          .fontSize(60)
+          .on("end", draw);
+        layout.start();
+
+        // This function takes the output of 'layout' above and draw the words
+        // Better not to touch it. To change parameters, play with the 'layout' variable above
+        function draw(words) {
+          svg
+          .append("g")
+            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+          .selectAll("text")
+            .data(words)
+          .enter().append("text")
+            .style("font-size", function(d) { return d.size + "px"; })
+            .attr("text-anchor", "middle")
+            .attr("transform", function(d) {return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";})
+            .text(function(d) { return d.text; });
+            };
+      };
+    </script>
+</body>
+
+</html>
