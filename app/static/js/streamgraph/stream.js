@@ -13,7 +13,7 @@ var svg = d3.select("#my_dataviz")
         "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("stream_data.csv").then(function(data) {
+d3.csv("https://github.com/phoshell/csv-urls/blob/master/polarity_stream_data2.csv").then(function(data) {
     console.log(data);
 
     //////////

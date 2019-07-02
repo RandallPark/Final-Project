@@ -1,5 +1,5 @@
 function dashboard(id, fData) {
-    var barColor = 'black';
+    var barColor = '#ffbd4a';
 
     function segColor(c) { return { negative: "#000000", positive: "#ffffff" }[c]; }
 
@@ -50,7 +50,7 @@ function dashboard(id, fData) {
             .on("mouseout", mouseout); // mouseout is defined below.
 
         //Create the treatment_status labels above the rectangles.
-        bars.append("text").text(function(d) { return d3.format(",")(d[1]) })
+        bars.append("text").text(function(d) { return d3.format(",.1%")(d[1]) })
             .attr("x", function(d) { return x(d[0]) + x.rangeBand() / 2; })
             .attr("y", function(d) { return y(d[1]) - 5; })
             .attr("text-anchor", "middle");
@@ -89,7 +89,7 @@ function dashboard(id, fData) {
 
             // transition the treatment_status labels location and change value.
             bars.select("text").transition().duration(500)
-                .text(function(d) { return d3.format(",")(d[1]) })
+                .text(function(d) { return d3.format(",.1%")(d[1]) })
                 .attr("y", function(d) { return y(d[1]) - 5; });
         }
         return hG;
@@ -161,11 +161,11 @@ function dashboard(id, fData) {
         // create the first column for each segment.
         tr.append("td")
             .append("svg")
-            .attr("width", '30')
-            .attr("height", '16')
+            .attr("width", '20')
+            .attr("height", '20')
             .append("rect")
-            .attr("width", '30')
-            .attr("height", '16')
+            .attr("width", '20')
+            .attr("height", '20')
             .attr("fill", function(d) { return segColor(d.type); });
 
         // create the second column for each segment.
@@ -185,14 +185,14 @@ function dashboard(id, fData) {
             var l = legend.select("tbody").selectAll("tr").data(nD);
 
             // update the treatment_status.
-            l.select(".legendFreq").text(function(d) { return d3.format(",")(d.tweets); });
+            l.select(".legendFreq").text(function(d) { return d3.format(",.1%")(d.tweets); });
 
             // update the percentage column.
             l.select(".legendPerc").text(function(d) { return getLegend(d, nD); });
         }
 
         function getLegend(d, aD) { // Utility function to compute percentage.
-            return d3.format("%")(d.tweets / d3.sum(aD.map(function(v) { return v.tweets; })));
+            return d3.format(",.1%")(d.tweets / d3.sum(aD.map(function(v) { return v.tweets; })));
         }
 
         return leg;

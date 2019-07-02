@@ -33,18 +33,6 @@ body {
     background-size: cover;
 }
 
-.parallaxtwo {
-    /* The image used */
-    background-color: url("politics_dark.jpg");
-    /* Set a specific height */
-    min-height: 800px;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 p {
     width: 600px;
     padding: 5px;
@@ -88,6 +76,7 @@ h2 {
 
 /* path {
     stroke: #fff;
+    position: absolute;
 } */
 
 
@@ -98,8 +87,11 @@ path:hover {
 }
 
 rect:hover {
-    fill: #e5ff00;
+    fill: #ffccad;
 }
+
+
+/* i liked this color but nah -> #e5ff00 */
 
 .axis {
     font: 10px sans-serif;
@@ -119,7 +111,6 @@ svg {
 .legend tr {
     border-bottom: 1.3px solid #000000;
     display: block;
-    margin: auto;
 }
 
 .legend tr:first-child {
@@ -140,21 +131,25 @@ svg {
 }
 
 .legend {
-    margin-bottom: 76px;
+    margin-bottom: 100px;
     display: inline-block;
     border-collapse: collapse;
     border-spacing: 100px;
+    position: relative;
+    margin: auto;
+    padding: 5px 550px;
+    text-align: center;
 }
 
 .legend tbody,
 td {
     padding: 4px 5px;
-    margin: center;
+    margin: auto;
     vertical-align: center;
 }
 
 .legendFreq,
 .legendPerc {
-    align: right;
+    position: center;
     width: 50px;
 }
