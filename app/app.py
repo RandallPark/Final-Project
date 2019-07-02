@@ -6,7 +6,8 @@
 
 from flask import (
     Flask,
-    render_template)
+    render_template,
+    request)
 
 
 #################################################
@@ -43,16 +44,25 @@ def tweetreport():
     """ pandas twitter analysis page """
     return render_template("tweet-report.html")
 
-# SENTIMENT SCORING INTERACTION
-@app.route("/try-it", methods=['GET'])
-def get_form():
-    """ Show form to user """
-    return render_template("sentitry.html")
 
-@app.route("/try-it", methods=['POST'])
-def post_form():
+@app.route('/signup', methods = ['POST'])
+def signup():
+    email = request.form['email']
+    print("The email address is '" + email + "'")
+    return redirect('/')
+
+# SENTIMENT SCORING INTERACTION
+@app.route("/text-box", methods=['POST'])
+def get_text():
+    """ Show form to user """
+    email = request.form['email']
+    print("The email address is '" + email + "'")
+    return render_template("text-box.html")
+
+@app.route("/text-box", methods=['GET'])
+def post_text():
     """ process the form """
-    return render_template("sentitry.html")
+    return render_template("text-box.html")
 
 
 # 4. Define main behavior
