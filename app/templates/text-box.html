@@ -27,19 +27,20 @@
   <div class="container">
         <div class="col-md-10 justify-content-center" >
             <div class="panel-heading">Tweet Word Cloud</div>
-              <form action="/signup" method="post">
-                <input type="text" name="enter tweet"></input>
-                <input type="submit" value="Signup"></input>
-              </form>
+              <!-- <form action="/text-box" method="post">
+                <input type="text" name="text_entry"></input>
+                <input type="submit" value="Run">
+              </form> -->
               
-              <form>
-                <div class="form-group">
+              <form action="/text-box" method="POST">
+                <div class="form-group" >
                   <ul class="list-group" id="filters">
-                      <label for="date">Enter a Tweet</label>
-                      <input class="form-control" id="tweetfield" type="text" placeholder="tweets">
+                      <label >Enter a Tweet</label>
+                      <input class="form-control" id="tweetfield" type="text" placeholder="tweets" name="text_entry">
+                      <input type="submit" value="Run" class="btn btn-default">
                   </ul>
                 </div>
-                <button id="input-btn" type ="reset" class="btn btn-default" onClick="">New Tweets</button>
+                <button id="input-btn" type ="reset" class="btn btn-default" onClick="">Cloud</button>
               </form>
             </div>
             <div id="my_dataviz"></div>
