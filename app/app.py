@@ -58,43 +58,6 @@ def tweetreport():
 my_data = []
 text_data = {}
 
-#EXAMPLE
-@app.route("/api/data")
-def data():
-    print(my_data)
-    return jsonify(my_data)
-
-#EXAMPLE
-@app.route("/send", methods=["GET", "POST"])
-def send():
-    if request.method == "POST":
-        nickname = request.form["nickname"]
-        age = request.form["age"]
-
-        form_data = {
-            "nickname": nickname,
-            "age": int(age)
-        }
-
-        my_data.append(form_data)
-
-        return "Thanks for the form data!"
-
-    return render_template("form.html")
-
-#EXAMPLE
-@app.route('/input')
-def student():
-   return render_template('basic-input.html')
-
-#EXAMPLE
-@app.route('/output',methods = ['POST', 'GET'])
-def result():
-   if request.method == 'POST':
-      result = request.form
-      print(result)
-      return render_template("basic-output.html",result = result)
-
 @app.route("/text-box", methods=['GET'])
 def get_text():
     """ process the form """
