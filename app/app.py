@@ -56,6 +56,7 @@ def tweetreport():
 
 # Create a list to hold our data for EXAMPLE
 my_data = []
+text_data = {}
 
 #EXAMPLE
 @app.route("/api/data")
@@ -102,13 +103,17 @@ def get_text():
     return render_template("text-box.html")
 
 # SENTIMENT SCORING INTERACTION
-@app.route("/text-box", methods=['POST'])
+@app.route("/text-out", methods=['POST'])
 def post_text():
     """ Show form to user """
     # text_entry = ''
     text_entry = request.form['text_entry']
+
+    text_data = {
+            "text": text_entry
+        }
     print(f"The tweet POST {text_entry}")
-    return render_template("text-box.html")
+    return render_template("text-out.html", text_data = text_data)
 
 
 
