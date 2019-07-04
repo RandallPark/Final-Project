@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-var margin = { top: 60, right: 230, bottom: 50, left: 50 },
-    width = 900 - margin.left - margin.right,
-    height = 350 - margin.top - margin.bottom;
+var margin = { top: 20, right: 30, bottom: 30, left: 60 },
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -12,190 +12,82 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
-// Parse the Data
-d3.csv("https://github.com/phoshell/csv-urls/blob/master/polarity_stream_data2.csv").then(function(data) {
+
+d3.csv('static/js/streamgraph/polarity_stream_data.csv', function(error, data) {
+
     console.log(data);
 
-    //////////
-    // GENERAL //
-    //////////
+    // this parses the data into something D3 can read
+    data.forEach(function(d) {
+        console.log("d.key: ", d.year);
+        let nums = d.year.split('-');
+        d.year = (+nums[0] + (+nums[1] - 1) / 12)
+        console.log(`Set year to ${d.year}`);
+        d.Bernie_Sanders = +d.Bernie_Sanders,
+            d.Donald_Trump = +d.Donald_Trump,
+            d.House_of_Democrats = +d.House_of_Democrats,
+            d.House_of_Republican = +d.House_of_Republican,
+            d.Joe_Biden = +d.Joe_Biden,
+            d.Liz_Cheney = +d.Liz_Cheney,
+            d.Marco_Rubio = +d.Marco_Rubio,
+            d.Mike_Pence = +d.Mike_Pence,
+            d.Senate_of_Democrats = +d.Senate_of_Democrats,
+            d.Senate_of_Republican = +d.Senate_of_Republican,
+            d.Senator_Warren = +d.Senator_Warren,
+            d.Ted_Cruz = +d.Ted_Cruz
+            // if (+d[key] === +d[key]) {
+            //     d[key] = +d[key]
+    });
 
-    // List of groups = header of the csv files
-    var keys = data.columns.slice(1)
-
-    // color palette
-    var color = d3.scaleOrdinal()
-        .domain(keys)
-        .range(d3.schemeSet2);
-
-    //stack the data?
-    var stackedData = d3.stack()
-        .keys(keys)
-        (data)
 
 
+    console.log(data)
+        // List of groups = header of the csv files
+    var keys = data.columns.slice(0)
+    console.log(`Keys: ${keys}`)
 
-    //////////
-    // AXIS //
-    //////////
 
     // Add X axis
     var x = d3.scaleLinear()
         .domain(d3.extent(data, function(d) { return d.year; }))
         .range([0, width]);
-    var xAxis = svg.append("g")
+    svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x).ticks(5))
-
-    // Add X axis label:
-    svg.append("text")
-        .attr("text-anchor", "end")
-        .attr("x", width)
-        .attr("y", height + 40)
-        .text("Time (year)");
-
-    // Add Y axis label:
-    svg.append("text")
-        .attr("text-anchor", "end")
-        .attr("x", 0)
-        .attr("y", -20)
-        .text("# of baby born")
-        .attr("text-anchor", "start")
+        .call(d3.axisBottom(x).ticks(5));
 
     // Add Y axis
     var y = d3.scaleLinear()
-        .domain([0, 200000])
+        .domain([-1100, 1100])
         .range([height, 0]);
     svg.append("g")
-        .call(d3.axisLeft(y).ticks(5))
+        .call(d3.axisLeft(y));
 
+    // color palette
+    var color = d3.scaleOrdinal()
+        .domain(keys)
+        .range(['#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33', '#a65628', '#f781bf', '#e41a1c', '#377eb8', '#4daf4a'])
 
+    console.log(`Color for 'bernie': ${color('Bernie_Sanders')}`);
 
-    //////////
-    // BRUSHING AND CHART //
-    //////////
+    //stack the data?
+    var stackedData = d3.stack()
+        .offset(d3.stackOffsetSilhouette)
+        .keys(keys)
+        (data)
 
-    // Add a clipPath: everything out of this area won't be drawn.
-    var clip = svg.append("defs").append("svg:clipPath")
-        .attr("id", "clip")
-        .append("svg:rect")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("x", 0)
-        .attr("y", 0);
-
-    // Add brushing
-    var brush = d3.brushX() // Add the brush feature using the d3.brush function
-        .extent([
-            [0, 0],
-            [width, height]
-        ]) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
-        .on("end", updateChart) // Each time the brush selection changes, trigger the 'updateChart' function
-
-    // Create the scatter variable: where both the circles and the brush take place
-    var areaChart = svg.append('g')
-        .attr("clip-path", "url(#clip)")
-
-    // Area generator
-    var area = d3.area()
-        .x(function(d) { return x(d.data.year); })
-        .y0(function(d) { return y(d[0]); })
-        .y1(function(d) { return y(d[1]); })
+    console.log(`stackedData: ${stackedData}`);
 
     // Show the areas
-    areaChart
+    svg
         .selectAll("mylayers")
         .data(stackedData)
         .enter()
         .append("path")
-        .attr("class", function(d) { return "myArea " + d.key })
         .style("fill", function(d) { return color(d.key); })
-        .attr("d", area)
-
-    // Add the brushing
-    areaChart
-        .append("g")
-        .attr("class", "brush")
-        .call(brush);
-
-    var idleTimeout
-
-    function idled() { idleTimeout = null; }
-
-    // A function that update the chart for given boundaries
-    function updateChart() {
-
-        extent = d3.event.selection
-
-        // If no selection, back to initial coordinate. Otherwise, update X axis domain
-        if (!extent) {
-            if (!idleTimeout) return idleTimeout = setTimeout(idled, 350); // This allows to wait a little bit
-            x.domain(d3.extent(data, function(d) { return d.year; }))
-        } else {
-            x.domain([x.invert(extent[0]), x.invert(extent[1])])
-            areaChart.select(".brush").call(brush.move, null) // This remove the grey brush area as soon as the selection has been done
-        }
-
-        // Update axis and area position
-        xAxis.transition().duration(1000).call(d3.axisBottom(x).ticks(5))
-        areaChart
-            .selectAll("path")
-            .transition().duration(1000)
-            .attr("d", area)
-    }
-
-
-
-    //////////
-    // HIGHLIGHT GROUP //
-    //////////
-
-    // What to do when one group is hovered
-    var highlight = function(d) {
-        console.log(d)
-            // reduce opacity of all groups
-        d3.selectAll(".myArea").style("opacity", .1)
-            // expect the one that is hovered
-        d3.select("." + d).style("opacity", 1)
-    }
-
-    // And when it is not hovered anymore
-    var noHighlight = function(d) {
-        d3.selectAll(".myArea").style("opacity", 1)
-    }
-
-
-
-    //////////
-    // LEGEND //
-    //////////
-
-    // Add one dot in the legend for each name.
-    var size = 20
-    svg.selectAll("myrect")
-        .data(keys)
-        .enter()
-        .append("rect")
-        .attr("x", 700)
-        .attr("y", function(d, i) { return 10 + i * (size + 5) }) // 100 is where the first dot appears. 25 is the distance between dots
-        .attr("width", size)
-        .attr("height", size)
-        .style("fill", function(d) { return color(d) })
-        .on("mouseover", highlight)
-        .on("mouseleave", noHighlight)
-
-    // Add one dot in the legend for each name.
-    svg.selectAll("mylabels")
-        .data(keys)
-        .enter()
-        .append("text")
-        .attr("x", 700 + size * 1.2)
-        .attr("y", function(d, i) { return 10 + i * (size + 5) + (size / 2) }) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", function(d) { return color(d) })
-        .text(function(d) { return d })
-        .attr("text-anchor", "left")
-        .style("alignment-baseline", "middle")
-        .on("mouseover", highlight)
-        .on("mouseleave", noHighlight)
+        .attr("d", d3.area()
+            .x(function(d, i) { return x(d.data.year); })
+            .y0(function(d) { return y(d[0]); })
+            .y1(function(d) { return y(d[1]); })
+        )
 
 })
