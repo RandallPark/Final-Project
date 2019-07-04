@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>EasyWordCloud</title>
+    <title>WordCloud</title>
     <meta charset="UTF-8">
 
     <!-- Bootstrap Components -->
@@ -12,8 +12,18 @@
     <script src="../static/js/wordcloud/bower_components/d3/d3.js"></script>
     <script src="../static/js/wordcloud/bower_components/d3.layout.cloud/d3.layout.cloud.js"></script>
 
-    <script src="../static/js/wordcloud/wordcloud.js"></script>
-    <script src="../static/js/wordcloud/alldata_words.js"></script>
+    <!-- BIDEN -->
+    <script src="../static/js/wordcloud/biden/biden_wordcloud.js"></script>
+    <script src="../static/js/wordcloud/biden/biden_words.js"></script>
+    <!-- TRUMP -->
+    <script src="../static/js/wordcloud/trump/trump_wordcloud.js"></script>
+    <script src="../static/js/wordcloud/trump/trump_words.js"></script>
+    <!-- LIZ WARREN -->
+    <script src="../static/js/wordcloud/lizwarren/lizwarren_wordcloud.js"></script>
+    <script src="../static/js/wordcloud/lizwarren/lizwarren_words.js"></script>
+    <!-- LIZ CHENEY -->
+    <script src="../static/js/wordcloud/lizcheney/lizcheney_wordcloud.js"></script>
+    <script src="../static/js/wordcloud/lizcheney/lizcheney_words.js"></script>
 
     <!-- THE CSS STYLING -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style-wordcloud.css') }}">
@@ -57,17 +67,21 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <p>
-        <h1 color="#000000">Tokenizing the of Most Tweeted</h1>
-        <h1 color="#000000">Words of US Politicians</h1><br>
-    </p>
+    <h1 color="#000000">Tokenization</h1>
+    <h1>of A Few Politicians</h1><br>
+
     <!-- WOORDCLOOUUUD -->
+    <h1>Joe Biden</h1>
     <div class="my_svg"></div>
 
-    <!-- PARALAX TWITTER BRIDS -->
-    <div class="parallax"></div>
-    </br>
-    </br>
+    <h1>Donald Trump</h1>
+    <div class="my_dump"></div>
+
+    <h1>Elizabeth Warren</h1>
+    <div class="my_war"></div>
+
+    <h1>Liz Cheney</h1>
+    <div class="my_liz"></div>
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

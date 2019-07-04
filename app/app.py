@@ -40,19 +40,17 @@ def stream():
     """ scatter plot page """
     return render_template("stream.html")
 
+# VADER SENTIMENT + WORDCLOUD
+@app.route("/politic")
+def politic():
+    """ landing // politicians wordcloud """
+    return render_template("politicians.html")
+
 # PANDAS REPORT
 @app.route("/tweet-report")
 def tweetreport():
     """ pandas twitter analysis page """
     return render_template("tweet-report.html")
-
-
-# @app.route('/example', methods = ['POST'])
-# def signup():
-#     email = request.form['email']
-#     print("The email address is '" + email + "'")
-#     return redirect('/')
-
 
 # Create a list to hold our data for EXAMPLE
 my_data = []
