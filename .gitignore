@@ -4,6 +4,8 @@
 .DS_Store
 .ipynb_checkpoints/
 __pycache__
+app/__pycache__
 config.py
 app/config.py
 .ipynb_checkpoints
+app/.ipynb_checkpoints
