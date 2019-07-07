@@ -1,5 +1,4 @@
-# Previously 'WORLD WIDE WASTE' python app
-#  (template)
+# Main file for web server.
 #################################################
 # Imports
 #################################################
