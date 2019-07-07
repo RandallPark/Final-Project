@@ -8,7 +8,7 @@ When training a machine learning model **LOSS** is essentially how a machine lea
 ### Cross-Entropy Loss
 Cross-Entropy Loss is actually the only loss we are discussing here. Cross-entropy loss, or log loss, measures the performance of a classification model whose output is a probability value between 0 and 1. Cross-entropy loss increases as the predicted probability diverges from the actual label.  
 
-![](cross_entropy_graph.png)  
+![](../static/images/cross_entropy_graph.png)  
 [source][2]
 
 
@@ -19,7 +19,7 @@ With **Categorical cross entropy**, you measure cross entropy loss across severa
 The equation for Binary cross entropy loss is the same as equation for Categorical cross entropy loss with one output node.
 
 
-![](cross_entropy_equation.gif)  
+![](../static/images/cross_entropy_equation.gif)  
 [source][3]
 
 
@@ -29,7 +29,7 @@ When there are more than 2 categories of target labels, researches had came up w
 
 #### Example of Softmax across catagories:
 
-![](softmax_layer.svg)  
+![](../static/images/softmax_layer.svg)  
 [source][4]
 
 
