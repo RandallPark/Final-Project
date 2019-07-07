@@ -9,7 +9,6 @@
         <style>
             * {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background-color: rgb(224, 223, 223);
             }
 
             .navbar {
@@ -27,7 +26,7 @@
                 color: whitesmoke;
                 text-align: center;
                 display: block;
-                background-color: rgb(233, 101, 13);
+                background-color: rgb(116, 179, 247);
                 margin-left: 100px;
                 height: 100px;
                 width: 300px;
@@ -56,23 +55,23 @@
     </head>
    <body>
         <div class="container-fluid col-lg-12 col-sm-12">
-                <nav class="navbar navbar-expand-md navbar-light bg-light navbar-fixed-top">
-                    <a href="text-out.html" class="navbar-brand">Twitter</a>
-                    <!-- Main  -->
-                    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
-                        <!-- <ul class="comparisonbutton"> -->
-                        <div class="navbar-nav justify-content-end">
-                            <a href="text-box.html" class="nav-item nav-link">Text Box</a>
-                        </div>
+            <nav class="navbar navbar-expand-md navbar-light bg-light navbar-fixed-top">
+                <a href="{{url_for('index')}}" class="navbar-brand">Twitter</a>
+                <!-- Main  -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+                    <!-- <ul class="comparisonbutton"> -->
+                    <div class="navbar-nav justify-content-end">
+                        <a href="{{url_for('get_text')}}" class="nav-item nav-link">Text Box</a>
                     </div>
-                </nav>
-            </div>
-        
-      <table border = 1>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid col-lg-16">
+            <table class = "table table-hover">
 
-         {% for key, value in text_data.items() %}
+            {% for key, value in text_data.items() %}
 
-            <tr>
+            <tr class = "row">
 
                <th> {{ key }} </th>
 
@@ -80,10 +79,10 @@
 
             </tr>
 
-         {% endfor %}
+            {% endfor %}
 
       </table>
 
    </body>
-
+</div>
 </html>
