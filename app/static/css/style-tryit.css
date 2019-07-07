@@ -1,0 +1,205 @@
+.iframeContainer {
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+}
+
+
+/* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+
+
+/* 
+body {
+    font-family: "Lucida Grande", "Droid Sans", Arial, Helvetica, sans-serif;
+    background-color: aquamarine;
+} */
+
+.legend {
+    border: 1px solid #555555;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 0.8em;
+    margin: 10px;
+    padding: 8px;
+}
+
+.bld {
+    font-weight: bold;
+}
+
+
+/* .list-group {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+} */
+
+
+/* 
+#tweetfield {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+} */
+
+
+/* CLOUD BUTTON */
+
+#input-btn {
+    display: block;
+    width: 20%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+input {
+    display: block;
+    width: 20%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+/* .container>.form-group {
+    width: 100%;
+    display: inline-block;
+    margin: center;
+} */
+
+
+/* PA PA PA PARALLAX */
+
+.parallax {
+    /* The image used */
+    background-image: url("twitter-bird.jpg");
+    /* Set a specific height */
+    min-height: 400px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #5ce0fa;
+}
+
+p {
+    width: 600px;
+    padding: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+    /* font-family: 'Yantramanav', sans-serif; */
+}
+
+h4 {
+    text-align: center;
+    color: #38A1F3;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* font-family: Futura, "Trebuchet MS", Arial, sans-serif; */
+    /* font-family: 'Yantramanav', sans-serif; */
+}
+
+h3,
+h2 {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Yantramanav', sans-serif;
+    padding: 10px;
+    padding-bottom: 5%;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 10px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+#footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* path {
+stroke: #fff;
+} */
+
+
+/* DASHBOARD STYLING */
+
+path:hover {
+    opacity: 0.9;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+
+/* Centering the vizzes */
+
+svg {
+    display: block;
+    margin: auto;
+}
+
+
+/* DASH LEGEND */
+
+.legend tr {
+    border-bottom: 1.3px solid #000000;
+    display: block;
+    margin: auto;
+}
+
+.legend tr:first-child {
+    border-top: 1.3px solid #000000;
+    display: block;
+    margin: auto;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.legend {
+    margin-bottom: 76px;
+    display: inline-block;
+    border-collapse: collapse;
+    border-spacing: 100px;
+}
+
+.legend tbody,
+td {
+    padding: 4px 5px;
+    margin: center;
+    vertical-align: center;
+}
+
+.legendFreq,
+.legendPerc {
+    align: right;
+    width: 50px;
+}
