@@ -34,17 +34,18 @@ def wordcloud():
     """ landing // dashboard & wordcloud """
     return render_template("wordcloud.html")
 
-# TENSORFLOW SENTIMENT + STREAMGRAPH
-@app.route("/stream")
-def stream():
-    """ scatter plot page """
-    return render_template("stream.html")
-
-# VADER SENTIMENT + WORDCLOUD
+# INDIVIDUAL POLITICIAN WORDCLOUD
 @app.route("/politic")
 def politic():
     """ landing // politicians wordcloud """
     return render_template("politicians.html")
+
+# TENSORFLOW SENTIMENT + STREAMGRAPH
+# NOT WORKING
+@app.route("/stream")
+def stream():
+    """ scatter plot page """
+    return render_template("stream.html")
 
 # PANDAS REPORT
 @app.route("/tweet-report")
