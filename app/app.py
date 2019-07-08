@@ -10,6 +10,7 @@ from flask import (
     redirect,
     jsonify)
 
+from vadar_function import analyze_text
 
 #################################################
 # Flask Setup
@@ -67,14 +68,17 @@ def get_text():
 @app.route("/text-out", methods=['POST'])
 def post_text():
     """ Show form to user """
+
+
     # text_entry = ''
     text_entry = request.form['text_entry']
 
     text_data = {
             "text": text_entry
         }
+    results = analyze_text(text_entry)
     print(f"The tweet POST {text_entry}")
-    return render_template("text-out.html", text_data = text_data)
+    return render_template("text-out.html", text_data = text_data, results= results)
 
 
 
