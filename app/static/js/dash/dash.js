@@ -50,7 +50,7 @@ function dashboard(id, fData) {
             .on("mouseout", mouseout); // mouseout is defined below.
 
         //Create the treatment_status labels above the rectangles.
-        bars.append("text").text(function(d) { return d3.format(",.1%")(d[1]) })
+        bars.append("text").text(function(d) { return d3.format(",.3r")(d[1]) })
             .attr("x", function(d) { return x(d[0]) + x.rangeBand() / 2; })
             .attr("y", function(d) { return y(d[1]) - 5; })
             .attr("text-anchor", "middle");
@@ -89,7 +89,7 @@ function dashboard(id, fData) {
 
             // transition the treatment_status labels location and change value.
             bars.select("text").transition().duration(500)
-                .text(function(d) { return d3.format(",.1%")(d[1]) })
+                .text(function(d) { return d3.format(",.3r")(d[1]) })
                 .attr("y", function(d) { return y(d[1]) - 5; });
         }
         return hG;
@@ -185,14 +185,14 @@ function dashboard(id, fData) {
             var l = legend.select("tbody").selectAll("tr").data(nD);
 
             // update the treatment_status.
-            l.select(".legendFreq").text(function(d) { return d3.format(",.1%")(d.tweets); });
+            l.select(".legendFreq").text(function(d) { return d3.format(",.3r")(d.tweets); });
 
             // update the percentage column.
             l.select(".legendPerc").text(function(d) { return getLegend(d, nD); });
         }
 
         function getLegend(d, aD) { // Utility function to compute percentage.
-            return d3.format(",.1%")(d.tweets / d3.sum(aD.map(function(v) { return v.tweets; })));
+            return d3.format(",.3r")(d.tweets / d3.sum(aD.map(function(v) { return v.tweets; })));
         }
 
         return leg;
