@@ -1,112 +1,112 @@
 var freqData = [{
         Politician: "AOC",
         tweets: {
-            negative: 140.81600000000003,
-            positive: 267.8120000000001
+            positive: 1471,
+            negative: 637
         },
         Word_Count: 74520
     },
     {
         Politician: "Obama",
         tweets: {
-            negative: 125.16500000000002,
-            positive: 402.6519999999996
+            positive: 2418,
+            negative: 445
         },
         Word_Count: 48268
     },
     {
         Politician: "Bernie",
         tweets: {
-            negative: 416.9560000000002,
-            positive: 588.0500000000004
+            positive: 2868,
+            negative: 1600
         },
         Word_Count: 151400
     },
     {
         Politician: "Trump",
         tweets: {
-            negative: 445.8899999999998,
-            positive: 785.6200000000001
+            positive: 3124,
+            negative: 1648
         },
         Word_Count: 155478
     },
     {
         Politician: "Biden",
         tweets: {
-            negative: 161.24999999999986,
-            positive: 433.1960000000005
+            positive: 2584,
+            negative: 648
         },
         Word_Count: 76242
     },
     {
         Politician: "Liz Cheney",
         tweets: {
-            negative: 226.95800000000006,
-            positive: 592.3799999999998
+            positive: 2362,
+            negative: 798
         },
         Word_Count: 61020
     },
     {
         Politician: "Rubio",
         tweets: {
-            negative: 550.328,
-            positive: 641.5360000000002
+            positive: 3388,
+            negative: 2524
         },
         Word_Count: 213902
     },
     {
         Politician: "Pence",
         tweets: {
-            negative: 87.16800000000002,
-            positive: 652.6100000000004
+            positive: 2840,
+            negative: 286
         },
         Word_Count: 64116
     },
     {
         Politician: "Warren",
         tweets: {
-            negative: 620.0860000000006,
-            positive: 641.2539999999998
+            positive: 3364,
+            negative: 2688
         },
         Word_Count: 183896
     },
     {
         Politician: "Cruz",
         tweets: {
-            negative: 109.62999999999998,
-            positive: 419.59399999999977
+            positive: 2092,
+            negative: 426
         },
         Word_Count: 73786
     },
     {
         Politician: "SDC",
         tweets: {
-            negative: 112.00400000000009,
-            positive: 142.00999999999993
+            positive: 966,
+            negative: 538
         },
         Word_Count: 46372
     },
     {
         Politician: "SRC",
         tweets: {
-            negative: 133.814,
-            positive: 558.6399999999999
+            positive: 3244,
+            negative: 526
         },
         Word_Count: 89224
     },
     {
         Politician: "HDC",
         tweets: {
-            negative: 186.8959999999997,
-            positive: 317.57999999999953
+            positive: 2068,
+            negative: 784
         },
         Word_Count: 66690
     },
     {
         Politician: "GOP",
         tweets: {
-            negative: 123.70000000000006,
-            positive: 334.05600000000015
+            positive: 1774,
+            negative: 466
         },
         Word_Count: 59712
     },
