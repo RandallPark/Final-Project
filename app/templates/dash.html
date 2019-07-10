@@ -10,6 +10,10 @@
     <script src="{{ url_for('static', filename='js/wordcloud/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- <script src="{{ url_for('static', filename='js/wordcloud/bower_components/d3/d3.js') }}"></script> -->
 
+    <!-- SCATTER PLOT -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/activity_scatter/scatter.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/activity_scatter/politic_activity.csv') }}"></script>
+
     <style>
         body {
             /* Used to enable scrolling */
@@ -43,7 +47,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url_for('tweetreport') }}" target="_blank">Pandas Report</a></li>
-                    <li><a href="{{ url_for('stream') }}">Polarity Stream</a></li>
+                    <!-- <li><a href="{{ url_for('stream') }}">Polarity Stream</a></li> -->
                     <li><a href="{{ url_for('get_text') }}">Try It</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
@@ -80,11 +84,16 @@
 
         <h4>The above visualization displays the amount of Positive vs. Negative words counted for each politician.</h4>
         <h4>As you can see, some politicians are more active on Twitter, thus concluding in higher word count.</h4><br>
-        <h1>A Machine Learning</h1>
-        <h1>& Sentiment Analysis Tutorial</h1><br>
+        <!-- <h1>A Machine Learning</h1>
+        <h1>& Sentiment Analysis Tutorial</h1><br> -->
     </p>
+
+    <!-- </div>
+    <div id="my_dataviz"></div>
+
     <div class="parallax">
-    </div>
+
+    </div> -->
 
     <!-- Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
