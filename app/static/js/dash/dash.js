@@ -1,7 +1,7 @@
 function dashboard(id, fData) {
     var barColor = '#ffbd4a';
 
-    function segColor(c) { return { positive: "#000000", negative: "#ffffff" }[c]; }
+    function segColor(c) { return { positive: "#ffffff", negative: "#000000" }[c]; }
 
     // ROUNDING THE POSITIVE & NEGATIVE TWEETS
     // d3.format(",.1%")
