@@ -192,7 +192,7 @@ function dashboard(id, fData) {
         }
 
         function getLegend(d, aD) { // Utility function to compute percentage.
-            return d3.format("")(d.tweets / d3.sum(aD.map(function(v) { return v.tweets; })));
+            return d3.format(".0%")(d.tweets / d3.sum(aD.map(function(v) { return v.tweets; })));
         }
 
         return leg;
